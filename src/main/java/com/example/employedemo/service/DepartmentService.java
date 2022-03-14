@@ -1,14 +1,11 @@
-package department.service;
+package com.example.employedemo.service;
 
-import com.example.employedemo.entity.Employee;
-import com.example.employedemo.repository.EmployeeRepository;
-import department.entity.Department;
-import department.repository.DepartmentRepository;
+import com.example.employedemo.entity.Department;
+import com.example.employedemo.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

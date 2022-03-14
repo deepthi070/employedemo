@@ -1,4 +1,4 @@
-package department.entity;
+package com.example.employedemo.entity;
 
 import com.example.employedemo.entity.Employee;
 
@@ -16,9 +16,16 @@ public class Department {
 
     private  String str;
 
-    @OneToMany
-    private Employee employee;
+    @OneToMany(cascade=CascadeType.ALL, mappedBy="department")
+    private List<Employee> employee;
 
+    public List<Employee> getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(List<Employee> employee) {
+        this.employee = employee;
+    }
 
     public String getStr() {
         return str;
@@ -29,14 +36,6 @@ public class Department {
     }
 
 
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
 
     public Integer getDeptId() {
         return deptId;

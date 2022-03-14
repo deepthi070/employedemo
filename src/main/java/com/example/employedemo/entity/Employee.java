@@ -1,7 +1,5 @@
 package com.example.employedemo.entity;
 
-import department.entity.Department;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +11,9 @@ public class Employee {
     private Integer empId;
     private String empName;
     private Integer empAge;
+
+    @ManyToOne(cascade=CascadeType.ALL)
+    private Department department;
 
 
     public Integer getEmpId() {

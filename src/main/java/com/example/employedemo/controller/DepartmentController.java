@@ -1,17 +1,15 @@
-package department.controller;
+package com.example.employedemo.controller;
 
 import com.example.employedemo.repository.EmployeeRepository;
-import department.entity.Department;
-import department.repository.DepartmentRepository;
-import department.service.DepartmentService;
+import com.example.employedemo.entity.Department;
+import com.example.employedemo.repository.DepartmentRepository;
+import com.example.employedemo.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
-
 public class DepartmentController {
 
     @Autowired
@@ -23,10 +21,9 @@ public class DepartmentController {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @PostMapping("/dept")
-    public String createDept( @RequestParam String str){
-        
-        return str;
+    @PostMapping("/createDept")
+    public String createDept(@RequestBody String param){
+        return param;
         /*Optional<Object> dept1 = employeeRepository.findById(empId).map(employee -> {
             deptReq.setEmployee(employee);
             return departmentRepository.save(deptReq);
@@ -34,7 +31,7 @@ public class DepartmentController {
         return dept1;*/
     }
 
-    @PostMapping("/dept")
+    @PostMapping("/deptC")
     public Department createDept(Department dept){
         deptService.createOrUpdate(dept);
         return dept;

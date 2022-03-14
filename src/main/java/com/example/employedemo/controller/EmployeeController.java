@@ -13,7 +13,7 @@ public class EmployeeController {
     @Autowired
     EmployeeService empService;
 
-    @PostMapping("/emp")
+    @PostMapping("/empC")
     public Employee createOrUpdate(@RequestBody Employee emp){
         empService.createOrUpdate(emp);
         return emp;
